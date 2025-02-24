@@ -9,79 +9,78 @@ Team Member Names:
 
 This Chatbot also solves the bonus question in the assignment
 
+# P2P Chat Application
 
-# Peer-to-Peer Chat Application
+This is a simple Peer-to-Peer (P2P) chat application that allows users to communicate directly without a centralized server. It enables real-time messaging between connected peers.
 
-## Introduction
-This is a **Peer-to-Peer (P2P) Chat Application** that allows multiple users to communicate directly over a network without relying on a central server. Each peer can send and receive messages while maintaining a list of active connections.
+---
 
 ## Features
-- Start a local chat server
-- Send messages to other peers
-- Maintain a list of active peers
-- Connect to known peers dynamically
+- Decentralized communication using socket programming.
+- Supports multiple peers.
+- Allows sending and receiving messages.
+- Tracks active and known peers.
+- Connects to mandatory peers at startup.
+
+---
 
 ## Requirements
 - Python 3.x
-- Socket and Threading modules (pre-installed in Python)
+- A local network or direct peer connectivity.
 
-## Installation
-1. Clone or download this repository.
-2. Ensure Python is installed on your system.
-3. Run the script using:
-   ```sh
-   python Blockchain_boys.py
-   ```
+---
 
-## How to Use
-### 1. Start the Chat Server
-- Run the script: `python Blockchain_boys.py`
-- Enter your **IP address** (Use `0.0.0.0` to allow connections from all networks)
-- Enter a **port number** (e.g., `5000`)
-- Enter a **group name** to identify the chat group
+## Installation & Usage
 
-### 2. Menu Options
-Once the server starts, you will see a menu:
-```
-==== MENU ====
-1. Send Message
-2. Show Active Peers
-3. Connect to Peers
-0. Exit
-```
+### 1. **Run the Application**
+Execute the script using Python:
+python Blockchain_boys.py
 
-#### **Option 1: Send a Message**
-- Enter the recipient's IP and port.
-- Type your message and send it.
+### 2. **Set Up Your Peer**
+- Enter a unique **Team Name** (without spaces).
+- Choose a **port number** for your peer.
 
-#### **Option 2: Show Active Peers**
-- Displays all connected peers.
+### 3. **Menu Options**
+After setup, the program presents a menu:
 
-#### **Option 3: Connect to Peers**
-- Attempts to establish a connection with known peers.
+1. **Send Message**
+   - Enter the recipient’s IP and port.
+   - Type a message and send.
+   
+2. **Query Active Peers**
+   - Displays the list of known peers and their connection status.
+   
+3. **Connect to Active Peers**
+   - Connects to all or selected peers.
 
-#### **Option 0: Exit**
-- Shuts down the application.
+0. **Quit**
+   - Notifies peers and exits.
+
+---
+
+## Network Communication
+- **Messages are sent as:**  
+  `Sender_IP:Port Name Message`
+- Peers are added dynamically when messages are received.
+- The program automatically attempts to connect to predefined mandatory peers.
+
+---
 
 ## Example Usage
-1. **User A** starts the server on IP `192.168.1.10` and port `5000`.
-2. **User B** starts their server on IP `192.168.1.11` and port `6000`.
-3. **User A** sends a message to `192.168.1.11:6000`.
-4. **User B** receives the message and can reply back.
+1. Start the application and enter a **team name** and **port**.
+2. Use option `1` to send a message to another peer.
+3. Check active peers using option `2`.
+4. Connect to peers using option `3`.
+5. Exit using option `0`.
 
-## Troubleshooting
-- **Connection errors?** Check firewall settings and ensure ports are open.
-- **Peer not receiving messages?** Ensure both peers are using the correct IP and port.
-- **Server not starting?** Make sure no other process is using the chosen port.
+---
 
-## Future Improvements
-- Encrypt messages for better security.
-- Implement NAT traversal for better peer connectivity.
-- Add a user-friendly GUI.
+## Notes
+- Ensure that firewall settings allow connections to the chosen port.
+- The program runs a server in the background for receiving messages.
+- If a peer disconnects, it is removed from the active list.
 
-## License
-This project is open-source and free to use.
 
-## Author
-Developed by Blockchain Boys 🚀
+
+
 
